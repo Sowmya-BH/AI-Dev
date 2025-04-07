@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Initialize Groq client
-client = Groq(api_key =st.secrets.get("GROQ_API_KEY"))
+# # Initialize Groq client
+# client = Groq(api_key =st.secrets.get("GROQ_API_KEY"))
 
 
 # Streamlit Interface for title
@@ -41,7 +41,7 @@ if "history" not in st.session_state:
 
 
 # Groq client
-client = Groq(api_key = os.environ["GROQ_API_KEY"] )
+client = Groq(api_key = st.secrets.get("GROQ_API_KEY"))
 # print("API Key:", groq_api_key)  
 
 # Initialize sessesion state for history
