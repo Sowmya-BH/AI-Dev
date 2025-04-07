@@ -1,5 +1,5 @@
 # AI-Dev
-##🧠 Nexus.ai - Your Multi-LLM Chat Assistant
+# 🧠 Nexus.ai - Your Multi-LLM Chat Assistant
 
     Welcome to Nexus.ai, an interactive chat application designed to showcase the power
     of multiple Large Language Models (LLMs). This project allows you to engage in
