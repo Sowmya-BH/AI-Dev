@@ -5,12 +5,9 @@ from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
-headers= {
-   "authorization":st.secrets["GROQ_API_KEY"],
-   "content-type":"application/json"
-}
+
 # Initialize Groq client
-client = Groq(api_key = os.environ["GROQ_API_KEY"] )
+client = Groq(api_key =st.secrets.get("GROQ_API_KEY"))
 
 
 # Streamlit Interface for title
