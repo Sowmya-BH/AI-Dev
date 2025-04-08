@@ -1,4 +1,12 @@
 # AI-Dev
+
+
+# **Nexus.ai Chatbot Application**
+A Streamlit-based conversational AI application powered by Groq's LLMs.
+
+---
+
+## **Overview**
 ## 🧠 Nexus.ai - Your Multi-LLM Chat Assistant
 
     Welcome to Nexus.ai, an interactive chat application designed to showcase the power
@@ -10,18 +18,6 @@
     simply chat with the AI of your choice.
 
   Check out the live app: [Nexus.ai](https://mynexus.streamlit.app/) 
-
-  Here's a draft for a README page for your Nexus.ai chatbot application:
-
----
-
-# **Nexus.ai Chatbot Application**
-A Streamlit-based conversational AI application powered by Groq's LLMs.
-
----
-
-## **Overview**
-Nexus.ai is an interactive chatbot designed to engage users with multiple Large Language Models (LLMs). It provides a user-friendly interface for selecting different LLMs and viewing chat history. This application leverages Streamlit for its frontend and Groq's API for backend LLM interactions.
 
 ---
 
