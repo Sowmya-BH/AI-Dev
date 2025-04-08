@@ -85,11 +85,6 @@ A Streamlit-based conversational AI application powered by Groq's LLMs.
 
 Contributions are welcome! Please submit pull requests with detailed explanations of changes.
 
----
-
-## **License**
-
-[Insert License Here, e.g., MIT License]
 
 ---
 
@@ -102,5 +97,4 @@ Contributions are welcome! Please submit pull requests with detailed explanation
 
 This README provides a comprehensive overview of your application, including setup instructions, features, and future development plans. Feel free to customize it further based on your specific needs!
 
----
-Answer from Perplexity: pplx.ai/share
+
