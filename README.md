@@ -8,3 +8,5 @@
     Explore the unique capabilities and responses of various LLMs by selecting your
     preferred model from the sidebar. Ask questions, generate creative text, or
     simply chat with the AI of your choice.
+
+  Check out the live app: [Nexus.ai](https://mynexus.streamlit.app/) 
