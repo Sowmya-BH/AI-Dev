@@ -27,18 +27,10 @@ A Streamlit-based conversational AI application powered by Groq's LLMs.
 - **Chat History**: Persistent chat history allows users to revisit previous conversations.
 - **User-Friendly Interface**: Streamlit provides an intuitive web interface for easy interaction.
 
----
-
-## **Requirements**
-
-- **Python 3.9+**: Required for running the application.
-- **Streamlit**: For building the web interface.
-- **Groq API Key**: Necessary for interacting with Groq's LLMs. Obtain from Groq's official platform.
-- **.env File**: For securely storing the Groq API key.
 
 ---
 
-## **Installation**
+## **Installation Guide**
 
 1. **Clone the Repository**:
    ```bash
