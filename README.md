@@ -1,10 +1,5 @@
-# AI-Dev
-
-
 # **Nexus.ai Chatbot Application**   
-A Streamlit-based conversational AI application powered by Groq's LLMs.
-
----
+ A Streamlit-based conversational AI application powered by Groq's LLMs.
 
 ## **Overview**
 ## 🧠 Nexus.ai - Your Multi-LLM Chat Assistant
