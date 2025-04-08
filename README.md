@@ -87,6 +87,6 @@ Contributions are welcome! Please submit pull requests with detailed explanation
 
 ---
 
-This README provides a comprehensive overview of your application, including setup instructions, features, and future development plans. Feel free to customize it further based on your specific needs!
+This README provides a comprehensive overview of the application, including setup instructions, features, and future development plans. Feel free to customize it further based on your specific needs!
 
 
