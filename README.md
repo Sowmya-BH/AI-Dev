@@ -65,7 +65,7 @@
 - **Structuring Responses**: Implement structured output formats (e.g., JSON) for better data integration.
 - **Logging Conversations**: Configure Output interactions for analytics, and debugging.
 - **Deployment Optimization**: Use Docker or cloud platforms for scalable deployment.
-- **Model Selection Optimization Based on Task** : To leverage the strengths of different LLMs for specific tasks, adopt dynamic model selection strategy to improve response quality, reduced latency, and potentially lower operational costs.
+- **Model Selection Optimization Based on Task** : *To leverage the strengths of different LLMs for specific tasks, adopt dynamic model selection strategy to improve response quality, reduced latency, and potentially lower operational costs*.
 
 ---
 
