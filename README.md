@@ -60,10 +60,10 @@
 
 ---
 
-## **Development Roadmap**
+## **Actively Working On**
 
-- **Structured Responses**: Implement structured output formats (e.g., JSON) for better data integration.
-- **Logging Conversations**: Store interactions for analytics and debugging.
+- **Structuring Responses**: Implement structured output formats (e.g., JSON) for better data integration.
+- **Logging Conversations**: Configure Output interactions for analytics, and debugging.
 - **Deployment Optimization**: Use Docker or cloud platforms for scalable deployment.
 
 ---
