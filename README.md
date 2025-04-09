@@ -60,12 +60,13 @@
 
 ---
 
-## **Actively Working On**
+## ** Actively Working On (Towards Phase Two) **
+The next stage of development will focus on customizing and specializing the AI capabilities of Nexus.ai which may involve customizing existing LLMs with specific datasets to create specialized bots tailored for particular domains or tasks.
+Multimodal Input Support: Expanding the application to handle various input types beyond text, such as images and potentially audio.
 
-- **Structuring Responses**: Implement structured output formats (e.g., JSON) for better data integration.
-- **Logging Conversations**: Configure Output interactions for analytics, and debugging.
-- **Deployment Optimization**: Use Docker or cloud platforms for scalable deployment.
-- **Model Selection Optimization Based on Task** : *To leverage the strengths of different LLMs for specific tasks, adopt dynamic model selection strategy to improve response quality, reduced latency, and potentially lower operational costs*.
+- **Text Generation**: Advanced and contextually rich text responses tailored for specific domain.
+- **Code Generation**: Assisting with programming tasks by generating code snippets.
+
 
 ---
 
