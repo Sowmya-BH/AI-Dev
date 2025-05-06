@@ -60,6 +60,9 @@ def convert_to_gemini_messages(history):
 
 
 # ====================== UI Setup ======================
+st.set_page_config(page_title="Buddy Chatbot", page_icon="💬")
+st.title("💬 Buddy - Your Friendly AI Assistant")
+
 # Initialize session state FIRST
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = deque(maxlen=MAX_HISTORY_LENGTH)
