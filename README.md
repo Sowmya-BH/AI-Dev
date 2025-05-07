@@ -18,7 +18,7 @@
 
 ## **Features**
 
-- **Multi-LLM Support**: Users can choose from multiple LLM models (e.g., Llama3-8b-8192, Llama3-70b-8192, Mixtral-8x7b-32768, Gemma-7b-It) to tailor responses based on specific needs.
+- **Multi-LLM Support**: Users can choose from multiple LLM models (e.g., Llama3-8b-8192, Llama3-70b-8192, Gemma-7b-It) to tailor responses based on specific needs.
 - **Chat History**: Persistent chat history allows users to revisit previous conversations.
 - **User-Friendly Interface**: Streamlit provides an intuitive web interface for easy interaction.
 
