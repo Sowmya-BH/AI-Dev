@@ -61,7 +61,11 @@ def convert_to_gemini_messages(history):
 
 # ====================== UI Setup ======================
 st.set_page_config(page_title="Buddy Chatbot", page_icon="💬")
-st.title("💬 Buddy - Your Friendly AI Assistant")
+# Title
+st.title("💬 Hi, I'm Nexus.ai!")
+st.title("How can I help you Today??")
+st.markdown("<hr style='border: 1px solid #ccc; opacity: 0.5;'>", unsafe_allow_html=True)
+
 
 # Initialize session state FIRST
 if "chat_history" not in st.session_state:
