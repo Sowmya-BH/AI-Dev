@@ -18,11 +18,12 @@ If you don't know something, politely say "I'm sorry, I don't know" rather than 
 # ====================== Session Management ======================
 def load_session(timestamp):
     """Load a specific chat session from history"""
-    
-    session = st.session_state.session_history[timestamp]
-    st.session_state.llm_provider = session["llm_provider"]
-    st.session_state.llm_provider_widget = session["llm_provider"]  # Update widget key
+    st.session_state.load_session = timestamp
     st.rerun()
+    # session = st.session_state.session_history[timestamp]
+    # st.session_state.llm_provider = session["llm_provider"]
+    # st.session_state.llm_provider_widget = session["llm_provider"]  # Update widget key
+    # st.rerun()
 
     # if timestamp in st.session_state.session_history:
     #     session = st.session_state.session_history[timestamp]
@@ -88,6 +89,7 @@ if "load_session" in st.session_state:
     # # Now rerun to refresh UI
     # st.rerun()
     session = st.session_state.session_history[st.session_state.load_session]
+    st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
     st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
     st.session_state.llm_provider_widget = session["llm_provider"]  # Set BEFORE widget
     del st.session_state.load_session  # Remove the signal
@@ -157,7 +159,7 @@ with st.sidebar:
             
             if cols[1].button("Load", key=f"load_{timestamp}"):
                 st.session_state.load_session = timestamp
-                st.rerun()
+                #st.rerun()
                 #return
             
             if cols[1].button("❌", key=f"delete_{timestamp}"):
