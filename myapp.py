@@ -82,10 +82,15 @@ if "session_history" not in st.session_state:
 
 # Handle session loading BEFORE rendering widgets
 if "load_session" in st.session_state:
-    # load_session(st.session_state.load_session)
+    # # load_session(st.session_state.load_session)
+    # session = st.session_state.session_history[st.session_state.load_session]
+    # st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
+    # # Now rerun to refresh UI
+    # st.rerun()
     session = st.session_state.session_history[st.session_state.load_session]
     st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
-    # Now rerun to refresh UI
+    st.session_state.llm_provider_widget = session["llm_provider"]  # Set BEFORE widget
+    del st.session_state.load_session  # Remove the signal
     st.rerun()
 
 # THEN create sidebar widgets
@@ -151,7 +156,8 @@ with st.sidebar:
             cols[0].caption(f"{preview}")
             
             if cols[1].button("Load", key=f"load_{timestamp}"):
-                load_session(timestamp)
+                st.session_state.load_session = timestamp
+                st.rerun()
                 #return
             
             if cols[1].button("❌", key=f"delete_{timestamp}"):
