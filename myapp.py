@@ -95,12 +95,12 @@ with st.sidebar:
     st.markdown(f"**Today's Date:** {datetime.now().strftime('%B %d, %Y')}")
 
 
-     llm_provider = st.selectbox(
-        "Choose Provider",
-        ["Gemini", "Groq"],
-        index=0,
-        key='llm_provider'   
-    )
+    #  llm_provider = st.selectbox(
+    #     "Choose Provider",
+    #     ["Gemini", "Groq"],
+    #     index=0,
+    #     key='llm_provider'   
+    # )
 
     
     def on_provider_change():
