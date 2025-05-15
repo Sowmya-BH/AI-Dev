@@ -20,11 +20,18 @@ def load_session(timestamp):
     """Load a specific chat session from history"""
     if timestamp in st.session_state.session_history:
         session = st.session_state.session_history[timestamp]
-        st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
+
+        # Use st.session_state._set_item() for safe updates
+        st.session_state._set_item("chat_history", deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH))
+        st.session_state._set_item("llm_provider", session["llm_provider"])
         
-        # Set provider BEFORE widget creation
-        st.session_state.llm_provider = session["llm_provider"]  # 👈 Critical change
+        # Force a rerun to update the UI
         st.rerun()
+        # st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
+        
+        # # Set provider BEFORE widget creation
+        # st.session_state.llm_provider = session["llm_provider"]  # 👈 Critical change
+        # st.rerun()
 
 def save_current_session():
     """Save current chat session to session history"""
