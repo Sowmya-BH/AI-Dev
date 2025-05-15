@@ -102,7 +102,7 @@ with st.sidebar:
         "Choose Provider",
         ["Gemini", "Groq"],
         index=0,
-        key='llm_provider'
+        key='llm_provider',
         key='llm_provider_widget'
     )
 
