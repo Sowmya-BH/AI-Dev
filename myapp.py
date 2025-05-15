@@ -89,13 +89,23 @@ if "load_session" in st.session_state:
 with st.sidebar:
     st.markdown("## ⚙️ Settings")
     st.markdown(f"**Today's Date:** {datetime.now().strftime('%B %d, %Y')}")
+
+    # Initialize provider if not set
+    if 'llm_provider' not in st.session_state:
+        st.session_state.llm_provider = "Gemini"
     
     llm_provider = st.selectbox(
         "Choose Provider",
         ["Gemini", "Groq"],
         index=0,
         key='llm_provider'
+        on_change='llm_provider_widget'
     )
+
+     # Update session state when widget changes
+    if st.session_state.llm_provider_widget != st.session_state.llm_provider:
+        st.session_state._set_item("llm_provider", st.session_state.llm_provider_widget)
+
     
     st.markdown("### Memory Settings")
     current_length = len(st.session_state.chat_history)
@@ -123,6 +133,7 @@ with st.sidebar:
             
             if cols[1].button("Load", key=f"load_{timestamp}"):
                 load_session(timestamp)
+                return
             
             if cols[1].button("❌", key=f"delete_{timestamp}"):
                 del st.session_state.session_history[timestamp]
