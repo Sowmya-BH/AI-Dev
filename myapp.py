@@ -121,9 +121,9 @@ with st.sidebar:
     )
 
    
-     # Update session state when widget changes
-    if st.session_state.llm_provider_widget != st.session_state.llm_provider:
-        st.session_state._set_item("llm_provider", st.session_state.llm_provider_widget)
+    #  # Update session state when widget changes
+    # if st.session_state.llm_provider_widget != st.session_state.llm_provider:
+    #     st.session_state._set_item("llm_provider", st.session_state.llm_provider_widget)
 
     
     st.markdown("### Memory Settings")
@@ -152,7 +152,7 @@ with st.sidebar:
             
             if cols[1].button("Load", key=f"load_{timestamp}"):
                 load_session(timestamp)
-                return
+                #return
             
             if cols[1].button("❌", key=f"delete_{timestamp}"):
                 del st.session_state.session_history[timestamp]
