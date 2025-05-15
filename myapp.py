@@ -103,7 +103,7 @@ with st.sidebar:
         ["Gemini", "Groq"],
         index=0,
         key='llm_provider',
-        key='llm_provider_widget'
+        # key='llm_provider_widget'
     )
 
      # Update session state when widget changes
