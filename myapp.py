@@ -93,13 +93,17 @@ with st.sidebar:
     # Initialize provider if not set
     if 'llm_provider' not in st.session_state:
         st.session_state.llm_provider = "Gemini"
+
+    
+    def on_provider_change():
+        st.session_state.llm_provider = st.session_state.llm_provider_widget
     
     llm_provider = st.selectbox(
         "Choose Provider",
         ["Gemini", "Groq"],
         index=0,
         key='llm_provider'
-        on_change='llm_provider_widget'
+        key='llm_provider_widget'
     )
 
      # Update session state when widget changes
