@@ -18,20 +18,20 @@ If you don't know something, politely say "I'm sorry, I don't know" rather than 
 # ====================== Session Management ======================
 def load_session(timestamp):
     """Load a specific chat session from history"""
-    if timestamp in st.session_state.session_history:
-        session = st.session_state.session_history[timestamp]
+    
+    session = st.session_state.session_history[timestamp]
+    st.session_state.llm_provider = session["llm_provider"]
+    st.session_state.llm_provider_widget = session["llm_provider"]  # Update widget key
+    st.rerun()
 
-        # Use st.session_state._set_item() for safe updates
-        st.session_state._set_item("chat_history", deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH))
-        st.session_state._set_item("llm_provider", session["llm_provider"])
+    # if timestamp in st.session_state.session_history:
+    #     session = st.session_state.session_history[timestamp]
+       
+    #     st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
         
-        # Force a rerun to update the UI
-        st.rerun()
-        # st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
-        
-        # # Set provider BEFORE widget creation
-        # st.session_state.llm_provider = session["llm_provider"]  # 👈 Critical change
-        # st.rerun()
+    #     # # Set provider BEFORE widget creation
+    #     st.session_state.llm_provider = session["llm_provider"]  # 👈 Critical change
+    #     st.rerun()
 
 def save_current_session():
     """Save current chat session to session history"""
@@ -82,7 +82,11 @@ if "session_history" not in st.session_state:
 
 # Handle session loading BEFORE rendering widgets
 if "load_session" in st.session_state:
-    load_session(st.session_state.load_session)
+    # load_session(st.session_state.load_session)
+    session = st.session_state.session_history[st.session_state.load_session]
+    st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
+    # Now rerun to refresh UI
+    st.rerun()
 
 # THEN create sidebar widgets
 # Sidebar configuration
@@ -90,22 +94,33 @@ with st.sidebar:
     st.markdown("## ⚙️ Settings")
     st.markdown(f"**Today's Date:** {datetime.now().strftime('%B %d, %Y')}")
 
-    # Initialize provider if not set
-    if 'llm_provider' not in st.session_state:
-        st.session_state.llm_provider = "Gemini"
+
+     llm_provider = st.selectbox(
+        "Choose Provider",
+        ["Gemini", "Groq"],
+        index=0,
+        key='llm_provider'   
+    )
 
     
     def on_provider_change():
         st.session_state.llm_provider = st.session_state.llm_provider_widget
-    
+
+    # Set default if not present
+    if 'llm_provider' not in st.session_state:
+        st.session_state.llm_provider = "Gemini"
+    if 'llm_provider_widget' not in st.session_state:
+        st.session_state.llm_provider_widget = st.session_state.llm_provider
+
+
     llm_provider = st.selectbox(
         "Choose Provider",
         ["Gemini", "Groq"],
-        index=0,
-        key='llm_provider',
-        # key='llm_provider_widget'
+        key='llm_provider_widget',
+        on_change=on_provider_change
     )
 
+   
      # Update session state when widget changes
     if st.session_state.llm_provider_widget != st.session_state.llm_provider:
         st.session_state._set_item("llm_provider", st.session_state.llm_provider_widget)
