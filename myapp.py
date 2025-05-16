@@ -161,9 +161,9 @@ with st.sidebar:
             cols[0].caption(f"{preview}")
             
             if cols[1].button("Load", key=f"load_{timestamp}"):
+                with st.spinner("Loading session..."): load_session(timestamp)
                 st.session_state.load_session = timestamp
-                #st.rerun()
-                #return
+                
             
             if cols[1].button("✖", key=f"delete_{timestamp}"):
                 del st.session_state.session_history[timestamp]
