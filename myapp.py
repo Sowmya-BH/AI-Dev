@@ -47,6 +47,9 @@ def save_current_session():
         }
 
 
+
+
+
 # ====================== LLM Initialization ======================
 def get_llm_client(provider):
     """Returns the correct client/model for the selected provider"""
@@ -83,17 +86,17 @@ if "session_history" not in st.session_state:
 
 # Handle session loading BEFORE rendering widgets
 if "load_session" in st.session_state:
-    # # load_session(st.session_state.load_session)
-    # session = st.session_state.session_history[st.session_state.load_session]
-    # st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
-    # # Now rerun to refresh UI
-    # st.rerun()
+    st.session_state.load_session = timestamp
     session = st.session_state.session_history[st.session_state.load_session]
     st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
     st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
     st.session_state.llm_provider_widget = session["llm_provider"]  # Set BEFORE widget
     del st.session_state.load_session  # Remove the signal
     st.rerun()
+
+
+
+
 
 # THEN create sidebar widgets
 # Sidebar configuration
