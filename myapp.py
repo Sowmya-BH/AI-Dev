@@ -86,7 +86,7 @@ if "session_history" not in st.session_state:
 
 # Handle session loading BEFORE rendering widgets
 if "load_session" in st.session_state:
-    st.session_state.load_session = timestamp
+    st.write("Session History:", st.session_state.session_history)
     session = st.session_state.session_history[st.session_state.load_session]
     st.session_state.chat_history = deque(session["chat_history"], maxlen=MAX_HISTORY_LENGTH)
     st.session_state.llm_provider = session["llm_provider"]  # Set BEFORE widget
