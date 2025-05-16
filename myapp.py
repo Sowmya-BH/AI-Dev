@@ -162,7 +162,7 @@ with st.sidebar:
                 #st.rerun()
                 #return
             
-            if cols[1].button("🚮", key=f"delete_{timestamp}"):
+            if cols[1].button("✖", key=f"delete_{timestamp}"):
                 del st.session_state.session_history[timestamp]
                 st.rerun()
     else:
